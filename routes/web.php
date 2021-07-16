@@ -12,6 +12,11 @@
 */
 
 /**
+ * ユーザー認証
+ */
+Auth::routes();
+
+/**
  * 記事
  */
 Route::get('/', 'ArticleController@index');
