@@ -9,6 +9,14 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class Article extends Model
 {
     /**
+     * ホワイトリスト
+     */
+    protected $fillable = [
+        'title',
+        'body',
+    ];
+
+    /**
      * usersテーブル リレーション(親)
      * @return BelongsTo
      */
