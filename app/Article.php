@@ -19,6 +19,7 @@ class Article extends Model
 
     /**
      * usersテーブル リレーション(親)
+     * 
      * @return BelongsTo
      */
     public function user(): BelongsTo
@@ -28,6 +29,7 @@ class Article extends Model
 
     /**
      * likesテーブル リレーション(子)
+     * 
      * @return BelongsToMany
      */
     public function likes(): BelongsToMany
@@ -36,7 +38,18 @@ class Article extends Model
     }
 
     /**
+     * tagsテーブル リレーション(子)
+     * 
+     * @return BelongsToMany
+     */
+    public function tags(): BelongsToMany
+    {
+        return $this->belongsToMany('App\Tag')->withTimestamps();
+    }
+
+    /**
      * いいね済み判定
+     * 
      * @param User
      * @return bool
      */
@@ -47,6 +60,7 @@ class Article extends Model
 
     /**
      * いいね数取得
+     * 
      * @return int
      */
     public function getCountLikesAttribute(): int
